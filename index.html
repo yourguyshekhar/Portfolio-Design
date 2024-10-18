@@ -54,18 +54,32 @@
             </div>
         </div>
      </div>
+
+     <!-- Overlay for the mobile menu -->
+     <div class="overlay"></div>
+
      <script src="https://cdnjs.cloudflare.com/ajax/libs/typed.js/2.0.10/typed.min.js"></script>
      <script>
-        var togglebtn=document.querySelector(".togglebtn");
-        var nav=document.querySelector(".navlinks");
-        togglebtn.addEventListener("click", function(){
+        var togglebtn = document.querySelector(".togglebtn");
+        var nav = document.querySelector(".navlinks");
+        var overlay = document.querySelector(".overlay");
+
+        togglebtn.addEventListener("click", function() {
             this.classList.toggle("click");
             nav.classList.toggle("open");
-        })
+            overlay.classList.toggle("active"); // Toggle the overlay
+        });
+
+        // Close the menu when clicking on the overlay
+        overlay.addEventListener("click", function() {
+            togglebtn.classList.remove("click");
+            nav.classList.remove("open");
+            overlay.classList.remove("active");
+        });
 
         var typed = new Typed(".input", {
             strings: ["Computer Engineering Student", "Web Developer", "Programmer"],
-            typedSpeed: 70,
+            typeSpeed: 70,
             backSpeed: 55,
             loop: true
         });
