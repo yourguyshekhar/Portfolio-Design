@@ -4,12 +4,49 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Responsive Portfolio Website Design</title>
-    <link rel="stylesheet" href="style.css">
+    <title>Shekhar Bhatt - Portfolio</title>
+    <link rel="stylesheet" href="slidebar.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;500;600&display=swap">
+    <style>
+        body {
+            font-family: 'Poppins', sans-serif;
+            background: #111;
+            color: #e5e5e5;
+        }
+        h1, h2, h3 {
+            color: #007ced;
+        }
+        h1 {
+            font-size: 2.5rem;
+        }
+        h2 {
+            font-size: 2rem;
+            margin-top: 30px;
+        }
+        h3 {
+            font-size: 1.5rem;
+            margin: 15px 0;
+        }
+        p {
+            margin: 10px 0;
+            line-height: 1.6;
+        }
+        a {
+            color: #007ced;
+            text-decoration: none;
+            transition: color 0.3s;
+        }
+        a:hover {
+            color: #005bb5;
+        }
+        .container {
+            margin: 20px 0;
+        }
+    </style>
 </head>
 <body>
-     <div class="hero-header">
+    <div class="hero-header">
         <div class="wrapper">
             <header>
                 <div class="logo">
@@ -22,22 +59,23 @@
                         <span></span>
                     </div>
                     <ul class="navlinks">
-                        <li><a href="#">Home</a></li>
-                        <li><a href="#">Education</a></li>
-                        <li><a href="#">Skills</a></li>
-                        <li><a href="#">Experience</a></li>
-                        <li><a href="#">Contact</a></li>
+                        <li><a href="#" data-section="home">Home</a></li>
+                        <li><a href="#" data-section="about">About</a></li>
+                        <li><a href="#" data-section="education">Education</a></li>
+                        <li><a href="#" data-section="skills">Skills</a></li>
+                        <li><a href="#" data-section="experience">Experience</a></li>
+                        <li><a href="#" data-section="contact">Contact</a></li>
                     </ul>
                 </nav>
             </header>
-            <div class="container">
-                 <div class="hero-pic">
+            <div class="container" id="home">
+                <div class="hero-pic">
                     <img src="images/profile-image.jpg" alt="Shekhar Bhatt" style="border-radius: 50%; width: 200px; height: 200px;">
-                 </div>
-                 <div class="hero-text">
+                </div>
+                <div class="hero-text">
                     <h5>Hi, I'm a <span class="input">Computer Engineering Student</span></h5>
                     <h1>Shekhar Bhatt</h1>
-                    <p> I am a computer engineering student passionate about developing innovative solutions. My focus lies in software development, web technologies, and exploring artificial intelligence to solve real-world problems. I am always eager to learn and take on new challenges. </p>
+                    <p>I am a computer engineering student passionate about developing innovative solutions. My focus lies in software development, web technologies, and exploring artificial intelligence to solve real-world problems. I am always eager to learn and take on new challenges.</p>
 
                     <div class="btn-group">
                         <a href="https://www.linkedin.com/in/shekhar-bhatt-18v" class="btn active" target="_blank">Hire Me</a>
@@ -50,16 +88,72 @@
                         <a href="https://twitter.com/yourguyshekhar"><i class="fa-brands fa-twitter"></i></a>
                         <a href="https://instagram.com/yourguyshekhar"><i class="fa-brands fa-instagram"></i></a>
                     </div>
-                 </div>
+                </div>
+            </div>
+
+            <div class="container" id="about" style="display: none;">
+                <h2>About Me</h2>
+                <p>I am <strong>Shekhar Bhatt</strong>, a dedicated and ambitious Computer Engineering student at NAST College, affiliated with Pokhara University. Since joining in 2022, I have immersed myself in a rigorous curriculum that emphasizes both theoretical foundations and practical applications of computer science.</p>
+                <p>My expertise lies in programming languages such as <strong>C, C++, Java</strong>, and <strong>MySQL</strong>, which I have applied in various projects, including a <strong>Library Management System</strong> and a <strong>Socket Chatting Program</strong>. These projects not only honed my technical skills but also enhanced my problem-solving abilities and taught me the importance of teamwork and collaboration.</p>
+                <p>As a passionate learner, I am constantly seeking opportunities to expand my knowledge and gain hands-on experience in the tech industry. I am particularly interested in software development and web technologies, with a keen focus on exploring the potential of artificial intelligence to address real-world challenges.</p>
+                <p>Beyond my academic pursuits, I have a deep appreciation for travel and music, which enrich my life and inspire my creativity. I believe that diverse experiences foster innovative thinking and contribute to my overall growth as a technologist.</p>
+            </div>
+
+            <div class="container" id="education" style="display: none;">
+                <h2>Education</h2>
+                <div class="education-details">
+                    <div class="education-item">
+                        <h3>Bachelor of Computer Engineering</h3>
+                        <p><strong>NAST College</strong>, 2022-Present</p>
+                        <p>Relevant coursework: Data Structures, Algorithms, Artificial Intelligence, Web Development.</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="container" id="skills" style="display: none;">
+                <h2>Skills</h2>
+                <div class="skills-details">
+                    <ul>
+                        <li>Programming Languages: <strong>C, C++, Java, MySQL</strong></li>
+                        <li>Web Development: <strong>HTML, CSS, JavaScript</strong></li>
+                        <li>Tools: <strong>Git, Docker, VS Code</strong></li>
+                        <li>Basic Knowledge of Machine Learning</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="container" id="experience" style="display: none;">
+                <h2>Experience</h2>
+                <div class="experience-details">
+                    <div class="experience-item">
+                        <h3>Academic Projects</h3>
+                        <p><strong>Library Management System:</strong> Developed using MySQL for backend database management.</p>
+                        <p><strong>Socket Chatting Program:</strong> Created using Java to facilitate real-time communication.</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="container" id="contact" style="display: none;">
+                <h2>Contact</h2>
+                <div class="contact-details">
+                    <p>You can reach me through any of the following ways:</p>
+                    <ul>
+                        <li>Email: <a href="mailto:shekharbhattaa@gmail.com">shekharbhattaa@gmail.com</a></li>
+                        <li>LinkedIn: <a href="https://www.linkedin.com/in/shekhar-bhatt-18v" target="_blank">Shekhar Bhatt</a></li>
+                        <li>Twitter: <a href="https://twitter.com/yourguyshekhar" target="_blank">@yourguyshekhar</a></li>
+                        <li>Phone: <a href="tel:9813173670">9813173670</a></li>
+                    </ul>
+                    <p>As a passionate Computer Engineering student, I love coding and programming. In my free time, I enjoy traveling and listening to music, which keeps me inspired and motivated.</p>
+                </div>
             </div>
         </div>
-     </div>
+    </div>
 
-     <!-- Overlay for the mobile menu -->
-     <div class="overlay"></div>
+    <!-- Overlay for the mobile menu -->
+    <div class="overlay"></div>
 
-     <script src="https://cdnjs.cloudflare.com/ajax/libs/typed.js/2.0.10/typed.min.js"></script>
-     <script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/typed.js/2.0.10/typed.min.js"></script>
+    <script>
         var togglebtn = document.querySelector(".togglebtn");
         var nav = document.querySelector(".navlinks");
         var overlay = document.querySelector(".overlay");
@@ -67,10 +161,9 @@
         togglebtn.addEventListener("click", function() {
             this.classList.toggle("click");
             nav.classList.toggle("open");
-            overlay.classList.toggle("active"); // Toggle the overlay
+            overlay.classList.toggle("active");
         });
 
-        // Close the menu when clicking on the overlay
         overlay.addEventListener("click", function() {
             togglebtn.classList.remove("click");
             nav.classList.remove("open");
@@ -83,6 +176,27 @@
             backSpeed: 55,
             loop: true
         });
-     </script>
+
+        // JavaScript for displaying sections
+        document.querySelectorAll(".navlinks a").forEach(link => {
+            link.addEventListener("click", function(event) {
+                event.preventDefault();
+                var section = this.getAttribute("data-section");
+
+                // Hide all sections
+                document.querySelectorAll(".container").forEach(container => {
+                    container.style.display = "none";
+                });
+
+                // Show the selected section
+                document.getElementById(section).style.display = "flex";
+
+                // Close the sidebar and overlay
+                togglebtn.classList.remove("click");
+                nav.classList.remove("open");
+                overlay.classList.remove("active");
+            });
+        });
+    </script>
 </body>
 </html>
