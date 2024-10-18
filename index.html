@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Responsive Portfolio Website Design</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css">
+</head>
+<body>
+     <div class="hero-header">
+        <div class="wrapper">
+            <header>
+                <div class="logo">
+                    <i class="fa-solid fa-a"></i>
+                    <div class="logo-text">Shekhar Bhatt</div>
+                </div>
+                <nav>
+                    <div class="togglebtn">
+                        <span></span>
+                        <span></span>
+                        <span></span>
+                    </div>
+                    <ul class="navlinks">
+                        <li><a href="#">Home</a></li>
+                        <li><a href="#">Education</a></li>
+                        <li><a href="#">Skills</a></li>
+                        <li><a href="#">Experience</a></li>
+                        <li><a href="#">Contact</a></li>
+                    </ul>
+                </nav>
+            </header>
+            <div class="container">
+                 <div class="hero-pic">
+                    <img src="images/IMG_20241018_104709.jpg" alt="Shekhar Bhatt" style="border-radius: 50%; width: 200px; height: 200px;">
+                 </div>
+                 <div class="hero-text">
+                    <h5>Hi, I'm a <span class="input">Computer Engineering Student</span></h5>
+                    <h1>Shekhar Bhatt</h1>
+                    <p> I am a computer engineering student passionate about developing innovative solutions. My focus lies in software development, web technologies, and exploring artificial intelligence to solve real-world problems. I am always eager to learn and take on new challenges. </p>
+
+                    <div class="btn-group">
+                       <a href="contact_page.html" class="btn active">Hire Me</a>
+                       <a href="contact_page.html" class="btn">Contact</a>
+                    </div>
+
+                    <div class="social">
+                        <a href="https://www.linkedin.com/in/shekhar-bhatt-18v"><i class="fa-brands fa-linkedin"></i></a>
+                        <a href="https://github.com/yourguyshekhar"><i class="fa-brands fa-github"></i></a>
+                        <a href="https://twitter.com/yourguyshekhar"><i class="fa-brands fa-twitter"></i></a>
+                        <a href="https://instagram.com/yourguyshekhar"><i class="fa-brands fa-instagram"></i></a>
+                    </div>
+                 </div>
+            </div>
+        </div>
+     </div>
+     <script src="https://cdnjs.cloudflare.com/ajax/libs/typed.js/2.0.10/typed.min.js"></script>
+     <script>
+        var togglebtn=document.querySelector(".togglebtn");
+        var nav=document.querySelector(".navlinks");
+        togglebtn.addEventListener("click", function(){
+            this.classList.toggle("click");
+            nav.classList.toggle("open");
+        })
+
+        var typed = new Typed(".input", {
+            strings: ["Computer Engineering Student", "Web Developer", "AI Enthusiast"],
+            typedSpeed: 70,
+            backSpeed: 55,
+            loop: true
+        });
+     </script>
+</body>
+</html>
