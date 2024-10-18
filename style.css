@@ -7,6 +7,7 @@
 }
 body {
     overflow-x: hidden;
+    background: #111; /* Set background color for the whole page */
 }
 .hero-header {
     width: 100%;
@@ -57,15 +58,54 @@ nav .togglebtn span {
     transition-property: transform, opacity;
 }
 nav .navlinks {
-    list-style-type: none;
+    list-style-type: none; /* Ensure no bullets/icons */
 }
 nav .navlinks li {
     display: inline-block;
+    list-style-type: none; /* Remove any bullets/icons from list items */
 }
 nav .navlinks li a {
     color: #e5e5e5;
     margin-right: 2.5rem;
 }
+
+/* Updated Sidebar Styles */
+nav .navlinks {
+    position: fixed;
+    top: 0;
+    right: -100%;
+    bottom: 0;
+    width: 60%;
+    height: 100vh;
+    background-color: rgba(34, 34, 34, 0.95); /* More opaque background */
+    z-index: 3;
+    box-shadow: 5px 13px 30px rgba(0, 0, 0, 0.2); /* Slightly softer shadow */
+    transition: 0.5s;
+    padding: 25px 0px;
+}
+
+nav .navlinks.open {
+    right: 0;
+}
+
+/* Add styles for nav links in sidebar */
+nav .navlinks li {
+    display: block; /* Make links block for easier clicking */
+    margin: 15px 0; /* Add margin for spacing */
+    list-style-type: none; /* Remove any bullets/icons from list items */
+}
+
+nav .navlinks li a {
+    display: block; /* Make links block */
+    color: #e5e5e5; /* Ensure links are readable */
+    padding: 10px 15px; /* Add padding for a better touch area */
+    transition: background 0.3s; /* Smooth background transition on hover */
+}
+
+nav .navlinks li a:hover {
+    background: rgba(0, 126, 237, 0.2); /* Light blue background on hover */
+}
+
 .container {
     display: flex;
     justify-content: space-around;
@@ -135,6 +175,59 @@ nav .navlinks li a {
     color: #007ced;
     transform: rotate(360deg) scale(1.2);
 }
+/* Section Styles */
+section {
+    padding: 60px 0;
+    background-color: #333;
+    color: #e5e5e5;
+    text-align: center;
+}
+section:nth-of-type(even) {
+    background-color: #222;
+}
+section h2 {
+    font-size: 2.5rem;
+    color: #007ced;
+    margin-bottom: 30px;
+}
+section .wrapper {
+    text-align: left;
+}
+/* Education, Skills, Experience Styles */
+.education-details, .skills-details, .experience-details {
+    margin-top: 30px;
+}
+.education-item, .experience-item {
+    margin-bottom: 20px;
+}
+.education-item h3, .experience-item h3 {
+    font-size: 1.5rem;
+    color: #007ced;
+}
+.education-item p, .experience-item p {
+    margin: 10px 0;
+}
+.skills-details ul {
+    list-style-type: none;
+    padding-left: 0;
+}
+.skills-details li {
+    margin-bottom: 10px;
+}
+/* Contact Section */
+.contact-details {
+    margin-top: 30px;
+}
+.contact-details p {
+    margin-bottom: 20px;
+}
+.contact-details ul {
+    list-style-type: none;
+    padding-left: 0;
+}
+.contact-details ul li {
+    margin-bottom: 10px;
+}
 /* Background overlay for mobile menu */
 .overlay {
     position: fixed;
@@ -142,7 +235,7 @@ nav .navlinks li a {
     left: 0;
     width: 100%;
     height: 100vh;
-    background: rgba(0, 0, 0, 0.5);
+    background: rgba(0, 0, 0, 0.9); /* Darker overlay */
     z-index: 2;
     display: none;
     transition: 0.3s;
@@ -173,30 +266,6 @@ nav .navlinks li a {
         transform: rotate(45deg);
         top: 0;
     }
-    nav .navlinks {
-        position: fixed; /* Use fixed to keep it in place */
-        top: 0;
-        right: -100%;
-        bottom: 0;
-        width: 60%;
-        height: 100vh;
-        background-color: #222;
-        z-index: 3;
-        box-shadow: 5px 13px 30px rgba(0, 0, 0, 0.1);
-        transition: 0.5s;
-        padding: 25px 0px;
-    }
-    nav .navlinks li {
-        display: block;
-    }
-    nav .navlinks li a {
-        display: block;
-        margin-bottom: 15px;
-        text-align: center;
-    }
-    nav .navlinks.open {
-        right: 0; /* Move into view */
-    }
 }
 @media(max-width: 768px) {
     .container {
@@ -204,6 +273,9 @@ nav .navlinks li a {
         padding-top: 2rem;
     }
     .hero-text {
-        padding: 20px 0px; /* Reduced padding */
+        padding: 20px 0px;
+    }
+    .education-item, .experience-item, .skills-details {
+        text-align: center;
     }
 }
