@@ -60,50 +60,77 @@ nav .togglebtn span {
 nav .navlinks {
     list-style-type: none; /* Ensure no bullets/icons */
 }
-nav .navlinks li {
-    display: inline-block;
-    list-style-type: none; /* Remove any bullets/icons from list items */
-}
-nav .navlinks li a {
-    color: #e5e5e5;
-    margin-right: 2.5rem;
-}
 
-/* Updated Sidebar Styles */
+/* For larger screens, display the nav links horizontally */
 nav .navlinks {
-    position: fixed;
-    top: 0;
-    right: -100%;
-    bottom: 0;
-    width: 60%;
-    height: 100vh;
-    background-color: rgba(34, 34, 34, 0.95); /* More opaque background */
-    z-index: 3;
-    box-shadow: 5px 13px 30px rgba(0, 0, 0, 0.2); /* Slightly softer shadow */
-    transition: 0.5s;
-    padding: 25px 0px;
+    position: static; /* Remove fixed positioning for desktop */
+    display: flex; /* Horizontal layout */
+    justify-content: flex-end; /* Align links to the right */
+    align-items: center;
+    height: auto; /* Remove height for desktop */
+    width: auto; /* Full width for desktop */
+    background: none; /* No background on desktop */
+    box-shadow: none; /* Remove box shadow */
+    padding: 0; /* Remove padding */
+    transition: none; /* No transition for desktop */
 }
 
-nav .navlinks.open {
-    right: 0;
-}
-
-/* Add styles for nav links in sidebar */
 nav .navlinks li {
-    display: block; /* Make links block for easier clicking */
-    margin: 15px 0; /* Add margin for spacing */
-    list-style-type: none; /* Remove any bullets/icons from list items */
+    display: inline-block; /* Display links inline */
+    margin: 0 15px; /* Add spacing between links */
 }
 
 nav .navlinks li a {
-    display: block; /* Make links block */
-    color: #e5e5e5; /* Ensure links are readable */
-    padding: 10px 15px; /* Add padding for a better touch area */
-    transition: background 0.3s; /* Smooth background transition on hover */
+    color: #e5e5e5; /* Link color */
+    padding: 10px 15px; /* Padding for clickable area */
+    text-transform: uppercase; /* Make links uppercase (optional) */
+    transition: color 0.3s; /* Smooth color change on hover */
 }
 
 nav .navlinks li a:hover {
-    background: rgba(0, 126, 237, 0.2); /* Light blue background on hover */
+    color: #007ced; /* Change color on hover */
+    background: none; /* No background on hover for desktop */
+}
+
+/* Sidebar only for mobile screens */
+@media(max-width: 930px) {
+    nav .navlinks {
+        position: fixed;
+        top: 0;
+        right: -100%;
+        bottom: 0;
+        width: 60%;
+        height: 100vh;
+        background-color: rgba(34, 34, 34, 0.95);
+        z-index: 3;
+        box-shadow: 5px 13px 30px rgba(0, 0, 0, 0.2);
+        transition: 0.5s;
+        padding: 25px 0px;
+        flex-direction: column; /* Stack links vertically */
+    }
+
+    nav .navlinks.open {
+        right: 0; /* Open sidebar */
+    }
+
+    nav .navlinks li {
+        display: block; /* Stack links */
+        margin: 15px 0; /* Space out links */
+    }
+}
+
+/* Show toggle button only for mobile */
+@media(max-width: 930px) {
+    nav .togglebtn {
+        display: initial;
+    }
+}
+
+/* Hide toggle button on desktop */
+@media(min-width: 931px) {
+    nav .togglebtn {
+        display: none;
+    }
 }
 
 .container {
@@ -175,7 +202,6 @@ nav .navlinks li a:hover {
     color: #007ced;
     transform: rotate(360deg) scale(1.2);
 }
-/* Section Styles */
 section {
     padding: 60px 0;
     background-color: #333;
@@ -193,7 +219,6 @@ section h2 {
 section .wrapper {
     text-align: left;
 }
-/* Education, Skills, Experience Styles */
 .education-details, .skills-details, .experience-details {
     margin-top: 30px;
 }
@@ -214,7 +239,6 @@ section .wrapper {
 .skills-details li {
     margin-bottom: 10px;
 }
-/* Contact Section */
 .contact-details {
     margin-top: 30px;
 }
@@ -243,30 +267,8 @@ section .wrapper {
 .overlay.active {
     display: block;
 }
+
 /* Responsive design & displaying navbar for small screens */
-@media(max-width: 930px) {
-    nav .togglebtn {
-        display: initial;
-    }
-    .click {
-        top: 45px;
-    }
-    .click span {
-        position: absolute;
-        margin-top: 12px;
-    }
-    .click span:first-child {
-        transform: rotate(-40deg);
-    }
-    .click span:nth-child(2) {
-        opacity: 0;
-        margin: 0;
-    }
-    .click span:last-child {
-        transform: rotate(45deg);
-        top: 0;
-    }
-}
 @media(max-width: 768px) {
     .container {
         flex-direction: column;
